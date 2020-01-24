@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
 
 function App() {
+
+  const [cells, setCells] = useState([
+    [false, false, false],
+    [false, false, false],
+    [false, false, false]
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="table">
+      <div className="row">
+        {cells[0].map((cell, idx) => { return <div key={idx} className="box" onClick={cell === false ? setCells(true) : setCells(false)}></div> })};
+      </div>
+      <div className="row">
+        {cells[1].map((cell, idx) => { return <div key={idx} className="box" onClick={cell === false ? setCells(true) : setCells(false)}></div> })};
+      </div>
+      <div className="row">
+        {cells[2].map((cell, idx) => { return <div key={idx} className="box" onClick={cell === false ? setCells(true) : setCells(false)}></div> })};
+      </div>
     </div>
   );
 }
