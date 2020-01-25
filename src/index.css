@@ -19,3 +19,7 @@ body {
   width: 30%;
   border: 1px solid darkgray 
 }
+
+.colored {
+  background-color: blue;
+}
