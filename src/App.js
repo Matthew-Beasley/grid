@@ -16,7 +16,7 @@ function App() {
   const [cells, setCells] = useState(startState);
 
   
-  const toggleCell = ({ ev, cell, row, col }) => {
+  const toggleCell = ({cell, row, col }) => {
     if (cell === false) {
       cells[row][col] = true;
     }
